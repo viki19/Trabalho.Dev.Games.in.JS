@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+#btnStart{
+    margin-top: 20px;
+}
+#select:focus{
+    outline: none;
+    border: none;
+    box-shadow:0 0 0 .2rem #868a8e;
+    transition-duration: 0.1s;
+}
+.row{
+}
+.col{
+    border: 2px solid #fff;
+    height: 175px;
+}
+img{
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    vertical-align: middle;
+    justify-self: center;
+    justify-items: center;
+    
+}
