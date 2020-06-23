@@ -11,57 +11,58 @@ btnComecar.onclick = function () {
 
     switch (modo.value) {
 
-        case 'Singleplayer': //SINGLEPLAYER
-
+        //SINGLEPLAYER
+        case 'Singleplayer':
             erro.className = '';
 
-            if (radio1.checked){
+            //VERIFICAÇÃO DO RADIO.CHECK
+            if (radio1.checked) {
+
+                /* var col = document.querySelector(".col");
+                var img = document.createElement('img');
+                img.src = "img/x.png";
+                img.style.width = "150px";
+                img.className = 'd-block mx-auto'
+                col.appendChild(img);
+                img = 'img.x.png'; */
 
 
-
-            } else if (radio2.checked){
+            } else if (radio2.checked) {
 
 
 
             } else {
-                
                 erro.appendChild(document.createTextNode("Erro! Selecione 'X' ou 'O' para prosseguir!"));
-                erro.className = 'alert alert-danger mx-auto w-50 text-center d-block mt-3'
-
+                erro.className = 'alert alert-danger mx-auto w-50 text-center d-block mt-3';
             }
 
             break;
-        case 'Multiplayer': //MULTIPLAYER
 
+        //MULTIPLAYER
+        case 'Multiplayer':
             erro.className = '';
 
-            if (radio1.checked){
-
-                function selecionar(){
-
-                    var sel = document.getElementsByClassName('col').style.backgroud-color = 'red';
-                    //ajustar efeito hover através de JS
-
-                }
-
-                });
+            //VERIFICAÇÃO DO RADIO.CHECK
+            if (radio1.checked) {
 
 
-            } else if (radio2.checked){
+
+            } else if (radio2.checked) {
 
 
 
             } else {
-                
                 erro.appendChild(document.createTextNode("Erro! Selecione 'X' ou 'O' para prosseguir!"));
-                erro.className = 'alert alert-danger mx-auto w-50 text-center d-block mt-3'
-
+                erro.className = 'alert alert-danger mx-auto w-50 text-center d-block mt-3';
             }
 
             break;
-        default: //DEFAULT
-            erro.appendChild(document.createTextNode('Erro! Selecione um modo de jogo para prosseguir!'));
+
+        //DEFAULT ERRO
+        default:
+            erro.appendChild(document.createTextNode("Erro! Selecione um modo de jogo!"));
             erro.className = 'alert alert-danger mx-auto w-50 text-center d-block mt-3';
+
     }
 
 };
