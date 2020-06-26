@@ -16,16 +16,38 @@ h1{
     transition-duration: 0.1s;
 }
 .col{
-    border: 2px solid #fff;
     height: 175px;
+    cursor: pointer;
 }
-img{
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    align-content: center;
-    vertical-align: middle;
-    justify-self: center;
-    justify-items: center;
-    
+h4{
+    color: #fff;
+    text-align: center;
+}
+#p1{
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+}
+#p2{
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+}
+#p3{
+    border-bottom: 5px solid #fff;
+}
+#p4{
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+}
+#p5{
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+}
+#p6{
+    border-bottom: 5px solid #fff;
+}
+#p7{
+    border-right: 5px solid #fff;
+}
+#p8{
+    border-right: 5px solid #fff;
 }
