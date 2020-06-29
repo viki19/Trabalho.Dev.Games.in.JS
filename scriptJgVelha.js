@@ -1,12 +1,12 @@
 var modo = document.querySelector("#select");
 var btnComecar = document.querySelector("#btnComecar");
 var erro = document.querySelector("#erro");
-var placarx = document.querySelector("#placarx");
-var placaro = document.querySelector("#placaro");
 var contx = 0;
 var conto = 0;
 var msg = document.querySelector("#msg");
 var btnlimpar = document.querySelector("#btnlimpar");
+var placarx = document.querySelector("#placarx");
+var placaro = document.querySelector("#placaro");
 
 var player1 = "X";
 var player2 = "O";
@@ -31,6 +31,17 @@ btnComecar.onclick = function () {
         //MULTIPLAYER
         case 'Multiplayer':
             erro.className = '';
+
+            var titleplacar = document.querySelector("#titleplacar");
+            titleplacar.appendChild(document.createTextNode("Placar"));
+            var txtX = document.querySelector("#txtX");
+            txtX.appendChild(document.createTextNode("Vitórias de X: "));
+            var txtO = document.querySelector("#txtO");
+            txtO.appendChild(document.createTextNode("Vitórias de O: "));
+
+            var txtVez = document.querySelector("#txtVez");
+            txtVez.appendChild(document.createTextNode("Vez de: "));
+
 
             atualizar();
             ativarColunas();
@@ -111,7 +122,7 @@ btnComecar.onclick = function () {
                     vencedor = p5;
                 } else if (((p9 == p7 && p9 == p8) || (p9 == p3 && p9 == p6) && p9 != '')) {
                     vencedor = p9;
-                } else if (p1 != '' && p2 != '' && p3 != '' && p4 != '' && p5 != '' && p6 != '' && p7 != '' && p8 != '' && p9 != ''){
+                } else if (p1 != '' && p2 != '' && p3 != '' && p4 != '' && p5 != '' && p6 != '' && p7 != '' && p8 != '' && p9 != '') {
                     msg.appendChild(document.createTextNode(`Empate, não houve vencedor e perdedor nesta rodada!`));
                     msg.className = 'alert alert-success mx-auto w-50 text-center d-block mt-3';
 
@@ -131,17 +142,20 @@ btnComecar.onclick = function () {
 
                 }
 
-                if (TurnoDe == player2 && FimJogo == true){
+                if (TurnoDe == player2 && FimJogo == true) {
+                    // 'X' venceu
                     contx++;
-                    placarx = contx;
+                    placarx.innerHTML = '';
+                    placarx.appendChild(document.createTextNode(contx));
 
-                    
-
-                } else if (TurnoDe == player1 && FimJogo == true){
+                } else if (TurnoDe == player1 && FimJogo == true) {
+                    // 'O' venceu
                     conto++;
-                    
+                    placaro.innerHTML = '';
+                    placaro.appendChild(document.createTextNode(conto));
+
                 }
-                
+
             };
 
             break;
@@ -149,13 +163,13 @@ btnComecar.onclick = function () {
         //DEFAULT ERRO
         default:
             erro.appendChild(document.createTextNode("Erro! Selecione um modo de jogo!"));
-            erro.className = 'alert alert-danger mx-auto w-50 text-center d-block mt-3';
+            erro.className = 'alert alert-danger mx-auto w-50 text-center d-block mt-3 mt-4';
 
     }
 
 };
 
-btnlimpar.onclick = function(){
+btnlimpar.onclick = function () {
 
     p1.innerHTML = '';
     p2.innerHTML = '';
@@ -167,17 +181,21 @@ btnlimpar.onclick = function(){
     p8.innerHTML = '';
     p9.innerHTML = '';
 
+    p1.setAttribute("jogar", '');
+    p2.setAttribute("jogar", '');
+    p3.setAttribute("jogar", '');
+    p4.setAttribute("jogar", '');
+    p5.setAttribute("jogar", '');
+    p6.setAttribute("jogar", '');
+    p7.setAttribute("jogar", '');
+    p8.setAttribute("jogar", '');
+    p9.setAttribute("jogar", '');
+
     FimJogo = false;
+
     msg.innerHTML = '';
     btnlimpar.innerHTML = '';
     msg.className = '';
     btnlimpar.className = '';
-    vencedor = '';
-
-    if (TurnoDe == player1){
-        TurnoDe = player2;
-    } else if (TurnoDe == player2){
-        TurnoDe = player1;
-    }
 
 };
