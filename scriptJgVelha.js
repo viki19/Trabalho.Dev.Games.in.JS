@@ -1,35 +1,50 @@
 var modo = document.querySelector("#select");
 var btnComecar = document.querySelector("#btnComecar");
 var erro = document.querySelector("#erro");
-var contx = 0;
-var conto = 0;
 var msg = document.querySelector("#msg");
 var btnlimpar = document.querySelector("#btnlimpar");
 var placarx = document.querySelector("#placarx");
 var placaro = document.querySelector("#placaro");
+var contx = 0;
+var conto = 0;
 
+// Variáveis para modo == singleplayer;
+var jogo = [];
+var posicoes = [];
+var jogador = "X";
+var cpu = "O";
+var nivel = 1;
+
+// Variáveis para modo == multiplayer;
 var player1 = "X";
 var player2 = "O";
 var TurnoDe = player1;
 var FimJogo = false;
 
+// Mais Variáveis para modo == singleplayer;
+var Turno = jogador;
+var Fim = false;
+
+// Mais Variáveis para modo == multiplayer;
+/*
+ * titleplacar;
+ * txtX;
+ * txtO;
+ * txtVez;
+ * player;
+ * colunas;
+ * p1, p2, p3, p4, p5, p6, p7, p8, p9;
+ * vencedor;
+ */
+
 btnComecar.onclick = function () {
 
     erro.innerHTML = '';
-    msgVitoria = '';
 
     switch (modo.value) {
 
         //SINGLEPLAYER
         case 'Singleplayer':
-            erro.className = '';
-
-
-
-            break;
-
-        //MULTIPLAYER
-        case 'Multiplayer':
             erro.className = '';
 
             var titleplacar = document.querySelector("#titleplacar");
@@ -38,7 +53,64 @@ btnComecar.onclick = function () {
             txtX.appendChild(document.createTextNode("Vitórias de X: "));
             var txtO = document.querySelector("#txtO");
             txtO.appendChild(document.createTextNode("Vitórias de O: "));
+            var txtVez = document.querySelector("#txtVez");
+            txtVez.appendChild(document.createTextNode("Vez de: "));
 
+            atualizar();
+            jogar();
+
+
+            var p1 = document.getElementById('p1').getAttribute('jogar');
+            var p2 = document.getElementById('p2').getAttribute('jogar');
+            var p3 = document.getElementById('p3').getAttribute('jogar');
+
+            var p4 = document.getElementById('p4').getAttribute('jogar');
+            var p5 = document.getElementById('p5').getAttribute('jogar');
+            var p6 = document.getElementById('p6').getAttribute('jogar');
+
+            var p7 = document.getElementById('p7').getAttribute('jogar');
+            var p8 = document.getElementById('p8').getAttribute('jogar');
+            var p9 = document.getElementById('p9').getAttribute('jogar');
+
+            function atualizar() {
+
+                if (Fim) { return; }
+
+                if (Turno == jogador) {
+
+                    var player = document.querySelectorAll("div#VezDe img")[0];
+                    player.setAttribute("src", "img/x.png");
+
+                } else {
+
+                    var player = document.querySelectorAll("div#VezDe img")[0];
+                    player.setAttribute("src", "img/o.png");
+
+                }
+
+            };
+
+            function jogar() {
+
+                var colunas = document.getElementsByClassName('col');
+
+                
+
+
+            }
+
+            break;
+
+        //MULTIPLAYER
+        /* case 'Multiplayer':
+            erro.className = '';
+
+            var titleplacar = document.querySelector("#titleplacar");
+            titleplacar.appendChild(document.createTextNode("Placar"));
+            var txtX = document.querySelector("#txtX");
+            txtX.appendChild(document.createTextNode("Vitórias de X: "));
+            var txtO = document.querySelector("#txtO");
+            txtO.appendChild(document.createTextNode("Vitórias de O: "));
             var txtVez = document.querySelector("#txtVez");
             txtVez.appendChild(document.createTextNode("Vez de: "));
 
@@ -158,7 +230,7 @@ btnComecar.onclick = function () {
 
             };
 
-            break;
+            break; */
 
         //DEFAULT ERRO
         default:
