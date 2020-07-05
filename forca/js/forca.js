@@ -17,7 +17,27 @@ var programming_languages = [
   "cobol",
   "react",
   "ajax",
-	"ruby"  
+  "ruby",
+  "sagaz",
+  "mexer",
+  "negro",
+  "algoz",
+  "termo",
+  "senso",
+  "nobre",
+  "plena",
+  "afeto",
+  "audaz",
+  "sutil",
+  "inato",
+  "desde",
+  "vigor",
+  "sanar",
+  "cerne",
+  "honra",
+  "lapso",
+  "muito",
+  "fosse "
 ]
 
 
