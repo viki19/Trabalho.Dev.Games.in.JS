@@ -47,62 +47,12 @@ btnComecar.onclick = function () {
         case 'Singleplayer':
             erro.className = '';
 
-            var titleplacar = document.querySelector("#titleplacar");
-            titleplacar.appendChild(document.createTextNode("Placar"));
-            var txtX = document.querySelector("#txtX");
-            txtX.appendChild(document.createTextNode("Vitórias de X: "));
-            var txtO = document.querySelector("#txtO");
-            txtO.appendChild(document.createTextNode("Vitórias de O: "));
-            var txtVez = document.querySelector("#txtVez");
-            txtVez.appendChild(document.createTextNode("Vez de: "));
-
-            atualizar();
-            jogar();
-
-
-            var p1 = document.getElementById('p1').getAttribute('jogar');
-            var p2 = document.getElementById('p2').getAttribute('jogar');
-            var p3 = document.getElementById('p3').getAttribute('jogar');
-
-            var p4 = document.getElementById('p4').getAttribute('jogar');
-            var p5 = document.getElementById('p5').getAttribute('jogar');
-            var p6 = document.getElementById('p6').getAttribute('jogar');
-
-            var p7 = document.getElementById('p7').getAttribute('jogar');
-            var p8 = document.getElementById('p8').getAttribute('jogar');
-            var p9 = document.getElementById('p9').getAttribute('jogar');
-
-            function atualizar() {
-
-                if (Fim) { return; }
-
-                if (Turno == jogador) {
-
-                    var player = document.querySelectorAll("div#VezDe img")[0];
-                    player.setAttribute("src", "img/x.png");
-
-                } else {
-
-                    var player = document.querySelectorAll("div#VezDe img")[0];
-                    player.setAttribute("src", "img/o.png");
-
-                }
-
-            };
-
-            function jogar() {
-
-                var colunas = document.getElementsByClassName('col');
-
-                
-
-
-            }
+            
 
             break;
 
         //MULTIPLAYER
-        /* case 'Multiplayer':
+        case 'Multiplayer':
             erro.className = '';
 
             var titleplacar = document.querySelector("#titleplacar");
@@ -188,6 +138,16 @@ btnComecar.onclick = function () {
 
                 var vencedor = '';
 
+                console.log(`P1: ${p1}`);
+                console.log(`P2: ${p2}`);
+                console.log(`P3: ${p3}`);
+                console.log(`P4: ${p4}`);
+                console.log(`P5: ${p5}`);
+                console.log(`P6: ${p6}`);
+                console.log(`P7: ${p7}`);
+                console.log(`P8: ${p8}`);
+                console.log(`P9: ${p9}`);
+
                 if (((p1 == p2 && p1 == p3) || (p1 == p4 && p1 == p7) || (p1 == p5 && p1 == p9) && p1 != '')) {
                     vencedor = p1;
                 } else if (((p5 == p4 && p5 == p6) || (p5 == p2 && p5 == p8) || (p5 == p3 && p5 == p7) && p5 != '')) {
@@ -230,7 +190,7 @@ btnComecar.onclick = function () {
 
             };
 
-            break; */
+            break;
 
         //DEFAULT ERRO
         default:
